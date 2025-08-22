@@ -48,6 +48,21 @@
 
   <div id="notify_sound"></div>
 
+  <!-- Firebase and Tailwind (added) -->
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
+  <script>
+    // Provide your Firebase config via window.firebaseConfig before deploying.
+    window.firebaseConfig = window.firebaseConfig || {
+      apiKey: "REPLACE_ME",
+      authDomain: "REPLACE_ME",
+      projectId: "REPLACE_ME",
+      appId: "REPLACE_ME"
+    };
+  </script>
+  <script type="text/javascript" src="js/firebase.js"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+
   <!-- build:js js/app.js -->
   <script type="text/javascript" src="js/lib/polyfill.js"></script>
   <script type="text/javascript" src="vendor/jquery/jquery.min.js"></script>
