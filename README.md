@@ -128,3 +128,29 @@ The source code is licensed under GPL v3. License is available [here](/LICENSE).
 
 
 ### [Contribute](CONTRIBUTING.md)
+
+## Firebase Authentication Setup
+
+1. Create a Firebase project at `https://console.firebase.google.com`.
+2. Add a Web App (Settings -> Project settings -> Your apps -> Web) and copy the config.
+3. Enable Authentication providers (Build -> Authentication -> Sign-in method):
+   - Enable Google.
+   - Enable Email/Password.
+4. In `app/index.html`, set `window.firebaseConfig` with your project config (apiKey, authDomain, projectId, appId).
+5. Deploy/run the app over HTTPS or `localhost` for Google Sign-In to work.
+6. Optional: Configure OAuth redirect domains in Firebase Auth settings to include your host.
+
+### Usage in this project
+- New login page at route `/login` uses Firebase Auth with:
+  - Login with Google
+  - Login/Register with Email and Password
+  - Password reset via email
+- Session persistence is handled by Firebase with LOCAL persistence; users stay logged in after refresh.
+- A profile menu in the header shows the user's display name/email with a Logout option.
+
+### Code entry points
+- Firebase init and service: `app/js/firebase.js`
+- Login controller: `AppLoginController` in `app/js/controllers.js`
+- Login template: `app/partials/mobile/login.html`
+- Profile menu: `app/partials/desktop/head.html`
+- Added includes: Firebase SDK and Tailwind in `app/index.html`

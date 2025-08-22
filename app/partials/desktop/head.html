@@ -36,6 +36,19 @@
       </div>
     </div>
 
+    <div class="tg_head_profile_wrap" style="float: right;">
+      <div class="dropdown" dropdown ng-if="firebaseUser">
+        <a class="tg_head_btn dropdown-toggle" dropdown-toggle>
+          <i class="icon icon-user"></i>
+          <span class="hidden-xs">{{(firebaseUser.displayName || firebaseUser.email)}}</span>
+        </a>
+        <ul class="dropdown-menu">
+          <li class="dropdown-header" ng-bind="firebaseUser.email"></li>
+          <li><a ng-click="firebaseLogout()"><i class="icon icon-logout"></i> Logout</a></li>
+        </ul>
+      </div>
+    </div>
+
     <div class="tg_head_main_wrap" ng-switch="offline">
       <div ng-switch-when="true" class="tg_head_connecting_wrap" ng-switch="offlineConnecting">
         <span ng-switch-default class="tg_head_connecting_text"><my-i18n msgid="head_waiting_for_network"></my-i18n><span my-loading-dots></span></span>
