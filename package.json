@@ -47,6 +47,7 @@
     "del": "^4.1.1",
     "gulp": "^4.0.2",
     "gulp-angular-templatecache": "^3.0.0",
+    "gulp-cli": "^3.1.0",
     "gulp-concat": "^2.1.7",
     "gulp-grep-stream": "0.0.2",
     "gulp-imagemin": "^5.0.3",
@@ -79,6 +80,5 @@
       "$",
       "chrome"
     ]
-  },
-  "dependencies": {}
+  }
 }
